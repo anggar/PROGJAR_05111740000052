@@ -1,7 +1,7 @@
 import socket
 
 SERVER_ADDRESS = ('127.0.0.1', 10001)
-BUFFER_SIZE = 32
+BUFFER_SIZE = 1024
 
 # Create a TCP/IP socket
 sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
