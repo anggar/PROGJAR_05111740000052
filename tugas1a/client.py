@@ -13,5 +13,6 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as sock:  # create TCP/IP
     print(f"Connecting to {SERVER_ADDRESS}")
 
     with open(filepath, 'rb') as f:
+        sock.send(filepath.encode())
         sock.sendfile(f)
         sock.shutdown(socket.SHUT_RD)

@@ -19,10 +19,10 @@ while True:
     connection, client_address = sock.accept()
     print(f"connection from {client_address}")
 
-    with open('output', 'wb+') as f:
+    rcv_fname = connection.recv(BUFFER_SIZE).decode()
+    with open(rcv_fname, 'wb+') as f:
         while True:
             data = connection.recv(BUFFER_SIZE)
-            print(f"received {data}")
             f.write(data)
             if not data:
                 break
