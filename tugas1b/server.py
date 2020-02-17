@@ -28,8 +28,7 @@ while True:
 
     try:
         with open(filename, 'rb') as f:
-            for chunk in iter(lambda: f.read(BUFFER_SIZE), b''):
-                connection.send(chunk)
+            connection.sendfile(f)
     except FileNotFoundError:
         connection.send("FILE NOT FOUND!!".encode())
 

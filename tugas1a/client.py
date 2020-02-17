@@ -17,8 +17,7 @@ sock.connect(SERVER_ADDRESS)
 filepath = sys.argv[1]
 try:
     with open(filepath, 'rb') as f:
-        for chunk in iter(lambda: f.read(BUFFER_SIZE), b''):
-            sock.sendall(chunk)
+        sock.sendfile(f)
         sock.shutdown(socket.SHUT_RD)
 
 finally:
