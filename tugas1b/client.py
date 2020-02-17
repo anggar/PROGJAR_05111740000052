@@ -3,7 +3,7 @@ import socket
 
 
 SERVER_ADDRESS = ('127.0.0.1', 10001)
-BUFFER_SIZE = 32
+BUFFER_SIZE = 1024
 
 
 # Create a TCP/IP socket
@@ -24,8 +24,6 @@ try:
             if not data:
                 break
             f.write(data)
-
-    # sock.shutdown(socket.SHUT_RD)
 
 finally:
     print("closing")
