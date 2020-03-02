@@ -23,11 +23,9 @@ sock.shutdown(socket.SHUT_WR)
 
 - Tangkapan setelah program dijalankan
 
-    ![](img/SS_NO_2.png)
+    ![](./SS_NO_2.png)
 
     Gambar di atas merupakan paket-paket yang terkirim melalui UDP port 5006. Karena kita mempartisi file menjadi paket-paket berukuran 1 byte, maka data yang muncul juga 1 byte (1 karakter).
-
-    ![](img/SS3.png)
 
 ### Soal 2
 
@@ -41,6 +39,6 @@ Menggunakan wireshark, capture hasil keluaran dari program `udp_simple.py` ke al
 
 - Hasil capture setelah program dijalankan
 
-    ![](img/SS_NO_1.png)
+    ![](./SS_NO_1.png)
 
     Dapat dilihat pada teks yang terseleksi bagian bawah, data yang terkirim sesuai ("ABCDEFGHIJKLMNOPQRSTUVWXYZ").
