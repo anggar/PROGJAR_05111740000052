@@ -1,6 +1,6 @@
 import socket
 
-SERVER_ADDRESS = ('127.0.0.1', 10000)
+SERVER_ADDRESS = ('127.0.0.1', 10001)
 BUFFER_SIZE = 1024
 
 # Create a TCP/IP socket
@@ -19,12 +19,17 @@ while True:
     connection, client_address = sock.accept()
     print(f"connection from {client_address}")
 
-    rcv_fname = connection.recv(BUFFER_SIZE).decode()
-    with open(f'recv/{rcv_fname}', 'wb+') as f:
-        while True:
-            data = connection.recv(BUFFER_SIZE)
-            f.write(data)
-            if not data:
-                break
+    filename = ""
+    while True:
+        data = connection.recv(BUFFER_SIZE)
+        filename += data.decode()
+        if not data:
+            break
+
+    try:
+        with open(filename, 'rb') as f:
+            connection.sendfile(f)
+    except FileNotFoundError:
+        connection.send("FILE NOT FOUND!!".encode())
 
     connection.close()

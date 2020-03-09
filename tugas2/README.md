@@ -27,6 +27,10 @@ sock.shutdown(socket.SHUT_WR)
 
     Gambar di atas merupakan paket-paket yang terkirim melalui UDP port 5006. Karena kita mempartisi file menjadi paket-paket berukuran 1 byte, maka data yang muncul juga 1 byte (1 karakter).
 
+- Tangkapan ketika program dijalankan dengan tujuan IP yang ada dikomputer lain
+
+    ![](./SS_NO_3.png)
+
 ### Soal 2
 
 Menggunakan wireshark, capture hasil keluaran dari program `udp_simple.py` ke alamat **127.0.0.1** ke port **5006**.
@@ -42,3 +46,7 @@ Menggunakan wireshark, capture hasil keluaran dari program `udp_simple.py` ke al
     ![](./SS_NO_1.png)
 
     Dapat dilihat pada teks yang terseleksi bagian bawah, data yang terkirim sesuai ("ABCDEFGHIJKLMNOPQRSTUVWXYZ").
+
+- Tangkapan ketika program dijalankan dengan tujuan IP yang ada dikomputer lain
+
+    ![](./SS_NO_4.png)
