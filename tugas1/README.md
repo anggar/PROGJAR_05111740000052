@@ -36,7 +36,7 @@ Untuk komputer saya program berjalan seperti simulasi pertama.
 
 Untuk program yang berjalan pada komputer lain ditangkap tangkapan layar berikut
 
-![](./img_ss_04_03.png)
+![](./img/ss_04_03.png)
 
 ## Simulasi 4
 
@@ -45,11 +45,11 @@ Untuk program yang berjalan pada komputer lain ditangkap tangkapan layar berikut
 
 Pada program klien akan dijalankan menjadi seperti ini.
 
-![](./img_ss_04_01.png)
+![](./img/ss_04_01.png)
 
 Sehingga menghasilkan keluaran pada program di server pada komputer berbeda.
 
-![](./img_ss_04_04.png)
+![](./img/ss_04_04.png)
 
 
 ## Simulasi 5
