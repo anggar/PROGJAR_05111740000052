@@ -1,5 +1,5 @@
 {
-    "dir": "target",
+    "dir": "server",
     "host": "localhost",
     "port": "8123"
 }

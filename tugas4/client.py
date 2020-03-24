@@ -1,54 +1,29 @@
 import logging
 import socket
-import argparse
 from typing import Optional
 
 from deps.config import Config
 from deps.utils import Action, Packet
+from deps.parser import Mode, Parser
 
 
 config = Config()
 
-
-class Parser:
-    def __init__(self):
-        self.parser = argparse.ArgumentParser(description="Fileserver using socket and thread")
-        self.parser.add_argument(
-            'cmd', metavar='cmd', type=str, nargs=1,
-            help='Command that will fed to system'
-        )
-        self.parser.add_argument(
-            'arg', metavar='arg', type=str, nargs='*',
-            help='Optional argument for command'
-        )
-        self.parser.add_argument(
-            '--host', 
-            dest='host', 
-            action='store',
-            help='specify host'
-        )
-        self.parser.add_argument(
-            '--port', 
-            dest='port', 
-            action='store',
-            help='specify port to use'    
-        )
-        self.args = {}
-    
-    def parse(self):
-        self.args = self.parser.parse_args()
-
-
-parser = Parser()
+parser = Parser(Mode.Client)
 parser.parse()
 
+config.from_args(parser)
 
 class Client:
     def __init__(self):
         self.conn = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         addr = (config.config["host"], config.config["port"])
         logging.info(f"Connecting to {addr}")
-        self.conn.connect(addr)
+        try:
+            self.conn.connect(addr)
+        except ConnectionRefusedError:
+            logging.error(f"Connection to {addr} refused. Aborting.")
+            exit()
 
     def send(self, packet: Packet) -> None:
         logging.info(f"Sending request packet")
@@ -69,21 +44,37 @@ class Client:
             logging.error(f'recv client: {e}')
             return None
 
+    def handlefile(self, conn: socket.socket, fname: str, mode: Action):
+        if mode == Action.POST:
+            with open(fname, 'rb') as f:
+                conn.sendfile(f)
+                conn.shutdown(socket.SHUT_RD)
+        elif mode == Action.GET:
+            logging.info(f"Receiving data from {conn.getsockname()}")
+            with open(fname, 'wb') as f:
+                while True:
+                    data = conn.recv(Packet.BUFFER)
+                    f.write(data)
+                    if data == b'':
+                        break
+
     def action(self, cmd, arg):
-        cmd = cmd[0] if cmd else ''
+        cmd = cmd[0].upper() if cmd else ''
         arg = arg[0] if arg else ''
 
-        if Action[cmd.upper()] == Action.LIST:
+        if Action[cmd] in [Action.LIST, Action.POST, Action.GET]:
             packet = Packet(cmd, arg)
             self.send(packet)
             res = self.recv()
             if res.cmd == 'result':
                 print(f"Result:\n {res.data}")
-        elif Action[cmd.upper()] == Action.POST:
-            with open(arg, 'rb+') as f:
-                for chunk in iter(lambda: f.read(Packet.BUFFER), b''):
-                    packet = Packet(cmd, arg, chunk)
-                    self.send(chunk)
+            elif res.cmd == 'port':
+                logging.info(f"Will be connecting to socket port: {res.data}")
+
+                with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as sock:  # create TCP/IP socket
+                    sock.connect((config.config["host"], res.data))
+                    logging.info(f"Make {cmd} action with file {arg}")
+                    self.handlefile(sock, arg, Action[cmd])
 
 
 if __name__ == '__main__':

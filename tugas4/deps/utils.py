@@ -1,15 +1,20 @@
 import json
 import os
+import argparse
 from enum import Enum
 from typing import Optional
+
+from .config import Config
+
+config = Config()
+
 
 class Packet:
     BUFFER = 1024
 
-    def __init__(self, cmd="", arg="", part: Optional[bytes] = None):
+    def __init__(self, cmd="", arg=""):
         self.cmd = cmd
         self.data = arg
-        self.part = part
 
     def __repr__(self):
         return {"cmd": self.cmd, "data": self.data}
@@ -21,10 +26,9 @@ class Packet:
     def result(self):
         if Action[self.cmd] == Action.LIST:
             self.cmd = "result"
-            self.data = str(os.listdir())
-        if Action[self.cmd] == Action.POST:
-            with open(self.data, 'ab+') as f:
-                f.write(self.part)
+            self.data = str(os.listdir(config.config["dir"]))
+        elif Action[self.cmd] in [Action.POST, Action.GET]:
+            self.cmd = "port"
 
         return self
 
@@ -38,6 +42,7 @@ class Packet:
     @property
     def json(self):
         return json.dumps(self.__repr__())
+
 
 class Action(Enum):
     LIST = 0
