@@ -28,6 +28,10 @@ class ChatClient:
                 return self.sendmessage(usernameto,message)
             elif (command=='inbox'):
                 return self.inbox()
+            elif (command=='online'):
+                return self.online()
+            elif(command=='logout'):
+                return self.logout()
             else:
                 return "*Maaf, command tidak benar"
         except IndexError:
@@ -74,7 +78,25 @@ class ChatClient:
             return "{}" . format(json.dumps(result['messages']))
         else:
             return "Error, {}" . format(result['message'])
-
+    def online(self):
+        if (self.tokenid==""):
+            return "Error, not authorized"
+        string="online \r\n"
+        result = self.sendstring(string)
+        if result['status']=='OK':
+            return f"{result['messages']}"
+        else:
+            return f"Error, {result['message']}"
+    def logout(self):
+        if (self.tokenid==""):
+            return "Error, not authorized"
+        string="logout {} \r\n" . format(self.tokenid)
+        result = self.sendstring(string)
+        if result['status']=='OK':
+            self.tokenid=""
+            return f"{result['messages']}"
+        else:
+            return f"Error, {result['message']}"
 
 
 if __name__=="__main__":

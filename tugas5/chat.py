@@ -35,6 +35,14 @@ class Chat:
 				username = self.sessions[sessionid]['username']
 				logging.warning("INBOX: {}" . format(sessionid))
 				return self.get_inbox(username)
+			elif (command=='online'):
+				logging.warning("ONLINE: \n")
+				return self.get_users_online()
+			elif (command=='logout'):
+				sessionid = j[1].strip()
+				usernamefrom = self.sessions[sessionid]['username']
+				logging.warning(f"LOGOUT: Logging out {usernamefrom} from current session")
+				return self.logout(sessionid)
 			else:
 				return {'status': 'ERROR', 'message': '**Protocol Tidak Benar'}
 		except KeyError:
@@ -87,6 +95,13 @@ class Chat:
 				msgs[users].append(s_fr['incoming'][users].get_nowait())
 			
 		return {'status': 'OK', 'messages': msgs}
+
+	def get_users_online(self):
+		return {'status': 'OK', 'messages': self.sessions}
+
+	def logout(self, sessionid):
+		self.sessions.pop(sessionid)
+		return {'status': 'OK', 'messages': 'Logged out successfully'}
 
 
 if __name__=="__main__":
