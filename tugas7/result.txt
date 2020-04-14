@@ -1,0 +1,73 @@
+Test for 10 requests with  1  concurrency
+Time taken for tests:   0.027 seconds
+Complete requests:      10
+Failed requests:        0
+Time per request:       2.739 [ms] (mean)
+Time per request:       2.739 [ms] (mean, across all concurrent requests)
+Transfer rate:          48.48 [Kbytes/sec] received
+
+Test for 10 requests with  5  concurrency
+Time taken for tests:   0.045 seconds
+Complete requests:      10
+Failed requests:        0
+Time per request:       22.510 [ms] (mean)
+Time per request:       4.502 [ms] (mean, across all concurrent requests)
+Transfer rate:          29.50 [Kbytes/sec] received
+
+Test for 10 requests with  10  concurrency
+Time taken for tests:   0.075 seconds
+Complete requests:      10
+Failed requests:        0
+Time per request:       74.765 [ms] (mean)
+Time per request:       7.476 [ms] (mean, across all concurrent requests)
+Transfer rate:          17.76 [Kbytes/sec] received
+
+Test for 50 requests with  1  concurrency
+Time taken for tests:   0.630 seconds
+Complete requests:      50
+Failed requests:        0
+Time per request:       12.593 [ms] (mean)
+Time per request:       12.593 [ms] (mean, across all concurrent requests)
+Transfer rate:          10.55 [Kbytes/sec] received
+
+Test for 50 requests with  10  concurrency
+Time taken for tests:   0.726 seconds
+Complete requests:      50
+Failed requests:        0
+Time per request:       145.121 [ms] (mean)
+Time per request:       14.512 [ms] (mean, across all concurrent requests)
+Transfer rate:          9.15 [Kbytes/sec] received
+
+Test for 50 requests with  30  concurrency
+Time taken for tests:   1.095 seconds
+Complete requests:      50
+Failed requests:        0
+Time per request:       656.777 [ms] (mean)
+Time per request:       21.893 [ms] (mean, across all concurrent requests)
+Transfer rate:          6.07 [Kbytes/sec] received
+
+Test for 50 requests with  50  concurrency
+Time taken for tests:   1.909 seconds
+Complete requests:      50
+Failed requests:        0
+Time per request:       1908.628 [ms] (mean)
+Time per request:       38.173 [ms] (mean, across all concurrent requests)
+Transfer rate:          3.48 [Kbytes/sec] received
+
+Test for 100 requests with  1  concurrency
+Time taken for tests:   7.954 seconds
+Complete requests:      100
+Failed requests:        0
+Time per request:       79.544 [ms] (mean)
+Time per request:       79.544 [ms] (mean, across all concurrent requests)
+Transfer rate:          1.67 [Kbytes/sec] received
+
+Test for 100 requests with  10  concurrency
+Time taken for tests:   7.830 seconds
+Complete requests:      100
+Failed requests:        0
+Time per request:       783.037 [ms] (mean)
+Time per request:       78.304 [ms] (mean, across all concurrent requests)
+Transfer rate:          1.70 [Kbytes/sec] received
+Test for 100 requests with  50  concurrency
+Test for 100 requests with  100  concurrency
