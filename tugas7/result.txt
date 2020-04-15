@@ -1,70 +1,110 @@
 Test for 10 requests with  1  concurrency
 Server Port:            10001
-Time taken for tests:   1.679 seconds
+Time taken for tests:   0.025 seconds
 Complete requests:      10
 Failed requests:        0
 Total transferred:      1360 bytes
-Requests per second:    5.96 [#/sec] (mean)
-Time per request:       167.904 [ms] (mean)
-Time per request:       167.904 [ms] (mean, across all concurrent requests)
-Transfer rate:          0.79 [Kbytes/sec] received
+Requests per second:    407.45 [#/sec] (mean)
+Time per request:       2.454 [ms] (mean)
+Time per request:       2.454 [ms] (mean, across all concurrent requests)
+Transfer rate:          54.11 [Kbytes/sec] received
               min  mean[+/-sd] median   max
 
 Test for 10 requests with  5  concurrency
 Server Port:            10001
-Time taken for tests:   0.872 seconds
+Time taken for tests:   0.048 seconds
 Complete requests:      10
 Failed requests:        0
 Total transferred:      1360 bytes
-Requests per second:    11.46 [#/sec] (mean)
-Time per request:       436.139 [ms] (mean)
-Time per request:       87.228 [ms] (mean, across all concurrent requests)
-Transfer rate:          1.52 [Kbytes/sec] received
+Requests per second:    208.17 [#/sec] (mean)
+Time per request:       24.019 [ms] (mean)
+Time per request:       4.804 [ms] (mean, across all concurrent requests)
+Transfer rate:          27.65 [Kbytes/sec] received
               min  mean[+/-sd] median   max
 
 Test for 10 requests with  10  concurrency
 Server Port:            10001
-Time taken for tests:   0.893 seconds
+Time taken for tests:   0.073 seconds
 Complete requests:      10
 Failed requests:        0
 Total transferred:      1360 bytes
-Requests per second:    11.20 [#/sec] (mean)
-Time per request:       892.719 [ms] (mean)
-Time per request:       89.272 [ms] (mean, across all concurrent requests)
-Transfer rate:          1.49 [Kbytes/sec] received
+Requests per second:    137.42 [#/sec] (mean)
+Time per request:       72.769 [ms] (mean)
+Time per request:       7.277 [ms] (mean, across all concurrent requests)
+Transfer rate:          18.25 [Kbytes/sec] received
               min  mean[+/-sd] median   max
 
 Test for 50 requests with  1  concurrency
 Server Port:            10001
-Time taken for tests:   8.262 seconds
+Time taken for tests:   0.585 seconds
 Complete requests:      50
 Failed requests:        0
 Total transferred:      6800 bytes
-Requests per second:    6.05 [#/sec] (mean)
-Time per request:       165.235 [ms] (mean)
-Time per request:       165.235 [ms] (mean, across all concurrent requests)
-Transfer rate:          0.80 [Kbytes/sec] received
+Requests per second:    85.43 [#/sec] (mean)
+Time per request:       11.706 [ms] (mean)
+Time per request:       11.706 [ms] (mean, across all concurrent requests)
+Transfer rate:          11.35 [Kbytes/sec] received
               min  mean[+/-sd] median   max
 
 Test for 50 requests with  10  concurrency
 Server Port:            10001
-Time taken for tests:   7.993 seconds
+Time taken for tests:   0.757 seconds
 Complete requests:      50
 Failed requests:        0
 Total transferred:      6800 bytes
-Requests per second:    6.26 [#/sec] (mean)
-Time per request:       1598.505 [ms] (mean)
-Time per request:       159.850 [ms] (mean, across all concurrent requests)
-Transfer rate:          0.83 [Kbytes/sec] received
+Requests per second:    66.05 [#/sec] (mean)
+Time per request:       151.406 [ms] (mean)
+Time per request:       15.141 [ms] (mean, across all concurrent requests)
+Transfer rate:          8.77 [Kbytes/sec] received
               min  mean[+/-sd] median   max
 
 Test for 50 requests with  30  concurrency
+Server Port:            10001
+Time taken for tests:   1.052 seconds
+Complete requests:      50
+Failed requests:        0
+Total transferred:      6800 bytes
+Requests per second:    47.52 [#/sec] (mean)
+Time per request:       631.361 [ms] (mean)
+Time per request:       21.045 [ms] (mean, across all concurrent requests)
+Transfer rate:          6.31 [Kbytes/sec] received
+              min  mean[+/-sd] median   max
 
 Test for 50 requests with  50  concurrency
+Server Port:            10001
+Time taken for tests:   3.306 seconds
+Complete requests:      50
+Failed requests:        0
+Total transferred:      6800 bytes
+Requests per second:    15.13 [#/sec] (mean)
+Time per request:       3305.743 [ms] (mean)
+Time per request:       66.115 [ms] (mean, across all concurrent requests)
+Transfer rate:          2.01 [Kbytes/sec] received
+              min  mean[+/-sd] median   max
 
 Test for 100 requests with  1  concurrency
+Server Port:            10001
+Time taken for tests:   6.413 seconds
+Complete requests:      100
+Failed requests:        0
+Total transferred:      13600 bytes
+Requests per second:    15.59 [#/sec] (mean)
+Time per request:       64.133 [ms] (mean)
+Time per request:       64.133 [ms] (mean, across all concurrent requests)
+Transfer rate:          2.07 [Kbytes/sec] received
+              min  mean[+/-sd] median   max
 
 Test for 100 requests with  10  concurrency
+Server Port:            10001
+Time taken for tests:   5.041 seconds
+Complete requests:      100
+Failed requests:        0
+Total transferred:      13600 bytes
+Requests per second:    19.84 [#/sec] (mean)
+Time per request:       504.134 [ms] (mean)
+Time per request:       50.413 [ms] (mean, across all concurrent requests)
+Transfer rate:          2.63 [Kbytes/sec] received
+              min  mean[+/-sd] median   max
 
 Test for 100 requests with  50  concurrency
 
