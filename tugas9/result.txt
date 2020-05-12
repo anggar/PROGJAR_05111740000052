@@ -1,0 +1,56 @@
+Test for  1000  requests with  1  concurrency
+Time taken for tests:   0.610 seconds
+Complete requests:      1000
+Failed requests:        0
+Total transferred:      298000 bytes
+Requests per second:    1638.60 [#/sec] (mean)
+Time per request:       0.610 [ms] (mean)
+Time per request:       0.610 [ms] (mean, across all concurrent requests)
+Transfer rate:          476.86 [Kbytes/sec] received
+
+Test for  1000  requests with  10  concurrency
+Time taken for tests:   0.429 seconds
+Complete requests:      1000
+Failed requests:        0
+Total transferred:      298000 bytes
+Requests per second:    2332.03 [#/sec] (mean)
+Time per request:       4.288 [ms] (mean)
+Time per request:       0.429 [ms] (mean, across all concurrent requests)
+Transfer rate:          678.66 [Kbytes/sec] received
+
+Test for  1000  requests with  50  concurrency
+Time taken for tests:   0.432 seconds
+Complete requests:      1000
+Failed requests:        0
+Total transferred:      298000 bytes
+Requests per second:    2314.40 [#/sec] (mean)
+Time per request:       21.604 [ms] (mean)
+Time per request:       0.432 [ms] (mean, across all concurrent requests)
+Transfer rate:          673.53 [Kbytes/sec] received
+
+Test for  1000  requests with  100  concurrency
+Time taken for tests:   0.423 seconds
+Complete requests:      1000
+Failed requests:        0
+Total transferred:      298000 bytes
+Requests per second:    2363.00 [#/sec] (mean)
+Time per request:       42.319 [ms] (mean)
+Time per request:       0.423 [ms] (mean, across all concurrent requests)
+Transfer rate:          687.67 [Kbytes/sec] received
+
+Test for  1000  requests with  1  concurrency
+Time taken for tests:   1100.214 seconds
+Complete requests:      1000
+Failed requests:        0
+Total transferred:      298000 bytes
+Requests per second:    0.91 [#/sec] (mean)
+Time per request:       1100.214 [ms] (mean)
+Time per request:       1100.214 [ms] (mean, across all concurrent requests)
+Transfer rate:          0.26 [Kbytes/sec] received
+
+Test for  1000  requests with  10  concurrency
+
+Test for  1000  requests with  50  concurrency
+
+Test for  1000  requests with  100  concurrency
+
