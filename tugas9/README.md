@@ -4,7 +4,7 @@
 
 Benchmarking menggunakan `apachebencmark` dengan melakukan 1000 request secara bersamaan. Test script ada di berkas `test.sh`. Hasil dapat dilihat di `result.txt`
 
-![Contoh hasil saat menjalankan skrip](./ss_test.png)
+![Contoh hasil saat menjalankan skrip](./ss_term.png)
 
 ## Result
 

@@ -14,7 +14,7 @@ Benchmarking menggunakan `apachebencmark` dengan melakukan 1000 request. Test sc
 ## Result
 
 | # | Concurrency level | Time taken for test | Complete request | Failed request | Total transferred | Requests per second  | Time per request | Transfer rate     |
-|---|-------------------|---------------------|------------------|----------------|-------------------|
+|---|-------------------|---------------------|------------------|----------------|-------------------|----------------------|------------------|-------------------|
 | 1 | 1     | 1.437 seconds | 1000 | 0 | 29800 bytes | 696.06 [#/sec] (mean) | 1.437 [ms] | 202.57 [Kbytes/sec] |
 | 2 | 10    | 0.679 seconds | 1000 | 0 | 29800 bytes | 1472.51 [#/sec] (mean) | 0.679 [ms] | 428.52 [Kbytes/sec] |
 | 3 | 50    | 0.636 seconds | 1000 | 0 | 29800 bytes | 1571.59 [#/sec] (mean) | 0.636 [ms] | 457.36 [Kbytes/sec] |
